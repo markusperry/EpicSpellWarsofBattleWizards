@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/top_view">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/top_half">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            android:id="@+id/player1stats"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Player 1"
+                android:id="@+id/player1Callout"
+                android:textColor="#ff0000"
+                android:textSize="15sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Position: Left"
+                android:id="@+id/player1Pos"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:textStyle="bold"
+                android:layout_marginRight="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Health: 100"
+                android:id="@+id/player1Health"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:id="@+id/player2stats"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Player 2"
+                android:id="@+id/player2Callout"
+                android:textColor="#ff0000"
+                android:textSize="15sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Position: Left"
+                android:id="@+id/player2Pos"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:textStyle="bold"
+                android:layout_marginRight="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Health: 100"
+                android:id="@+id/player2Health"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:id="@+id/player3stats"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Player 3"
+                android:id="@+id/player3Callout"
+                android:textColor="#ff0000"
+                android:textSize="15sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Position: Left"
+                android:id="@+id/player3Pos"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:textStyle="bold"
+                android:layout_marginRight="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Health: 100"
+                android:id="@+id/player3Health"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="X"
+            android:id="@+id/killButton"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#ff0000"
+            android:background="#b9000000" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/midField"
+        android:background="#818181">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/cardField">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/fieldCards">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:id="@+id/diceRoll">
+
+                    <ImageButton
+                        android:layout_width="fill_parent"
+                        android:layout_height="150dp"
+                        android:id="@+id/diceRollImage"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sum: "
+                        android:id="@+id/curRoll"
+                        android:textStyle="bold"
+                        android:typeface="serif"
+                        android:textColor="#000000"
+                        android:paddingLeft="10dp"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/cardsToPlay">
+
+                    <ImageButton
+                        android:layout_width="fill_parent"
+                        android:layout_height="250dp"
+                        android:id="@+id/playedCard1"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="2.5dp"
+                        android:src="@drawable/cardback"
+                        android:scaleType="fitXY"
+                        android:padding="2dp" />
+
+                    <ImageButton
+                        android:layout_width="fill_parent"
+                        android:layout_height="250dp"
+                        android:id="@+id/playedCard2"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="2.5dp"
+                        android:layout_marginRight="2.5dp"
+                        android:src="@drawable/cardback"
+                        android:scaleType="fitXY"
+                        android:padding="2dp" />
+
+                    <ImageButton
+                        android:layout_width="fill_parent"
+                        android:layout_height="250dp"
+                        android:id="@+id/playedCard3"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="2.5dp"
+                        android:src="@drawable/cardback"
+                        android:scaleType="fitXY"
+                        android:padding="2dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:id="@+id/CurPlayerStats">
+
+                <SurfaceView
+                    android:layout_width="500dp"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/playerHealthBar" />
+
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="fill_parent"
+                    android:text="READY"
+                    android:id="@+id/readyButton"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:textSize="30sp"
+                    android:textColor="#ff0000"
+                    android:background="#000000"
+                    android:layout_marginLeft="30dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="273dp"
+            android:layout_height="match_parent"
+            android:id="@+id/additionalCardField">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/firstRow">
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/addCard1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp" />
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/addCard2"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/secondRow">
+
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/addCard3"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp" />
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/addCard4"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/thirdRow">
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/addCard5"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp" />
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/addCard6"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="227dp"
+        android:id="@+id/cardSlots"
+        android:background="#818181">
+
+        <ImageButton
+            android:layout_width="125dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/playerCard1"
+
+            android:cropToPadding="false"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:baselineAlignBottom="false"
+            android:focusable="false"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:padding="2dp" />
+        <ImageButton
+            android:layout_width="125dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/playerCard2"
+
+            android:scaleType="fitXY"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:padding="2dp" />
+        <ImageButton
+            android:layout_width="125dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/playerCard3"
+
+            android:scaleType="fitXY"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:padding="2dp" />
+        <ImageButton
+            android:layout_width="125dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/playerCard4"
+
+            android:scaleType="fitXY"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:padding="2dp" />
+        <ImageButton
+            android:layout_width="125dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/playerCard5"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:padding="2dp"
+
+            android:scaleType="fitXY" />
+        <ImageButton
+            android:layout_width="125dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/playerCard6"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:padding="2dp"
+
+            android:scaleType="fitXY" />
+        <ImageButton
+            android:layout_width="125dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/playerCard7"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:padding="2dp"
+
+            android:scaleType="fitXY" />
+        <ImageButton
+            android:layout_width="128dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/playerCard8"
+
+            android:scaleType="fitXY"
+            android:padding="2dp" />
+    </LinearLayout>
+</LinearLayout>
