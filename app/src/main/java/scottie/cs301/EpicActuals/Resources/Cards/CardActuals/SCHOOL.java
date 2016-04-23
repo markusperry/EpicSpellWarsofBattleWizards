@@ -8,4 +8,4 @@ package scottie.cs301.EpicActuals.Resources.Cards.CardActuals;
  *
  * An attribute that each card has. Six distinct "flavors".
  */
-public enum SCHOOL {Illusion, Elemental, Primal, Dark, Arcane}
+public enum SCHOOL {ILLUSION, ELEMENTAL, PRIMAL, DARK, ARCANE}
