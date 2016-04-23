@@ -5,7 +5,6 @@ import android.util.Log;
 import java.util.Random;
 
 import scottie.cs301.EpicActuals.LocalProtect.STATIC;
-import scottie.cs301.EpicActuals.Resources.Actions.CHOICE;
 import scottie.cs301.EpicActuals.Resources.Cards.Deck;
 import scottie.cs301.Imports.GameFramework.infoMsg.GameState;
 
@@ -27,14 +26,14 @@ public class GameStateActual extends GameState {
     public STAGE[] playerStages;
     public int[] focusedCards;
     public int focusedPlayer;
-    public CHOICE[] curChoices;
+    public int playerTurn;
+
 
     private void init(int numPlayers) {
         playerHealths = new int[numPlayers];
         spellCardLocation = new LOCATION[Deck.theDeck.length];
         playerStages = new STAGE[numPlayers];
         focusedCards = new int[]{0, 0, 0};
-        curChoices = new CHOICE[]{CHOICE.Debug};
         curStage = STAGE.SelectingCards;
     }
 
@@ -64,14 +63,14 @@ public class GameStateActual extends GameState {
         int debugMark = 0;
     } //starting constructor
 
-    public GameStateActual(int PlayerNum,
+    public GameStateActual(
                            GameStateActual masterState) {
         playerHealths = masterState.playerHealths.clone();
         spellCardLocation = masterState.spellCardLocation.clone(); //full copy currently. will need to limit.
         playerStages = masterState.playerStages.clone();
         focusedCards = masterState.focusedCards.clone();
         focusedPlayer = masterState.focusedPlayer;
-        curChoices = masterState.curChoices.clone();
+
 
     }
 

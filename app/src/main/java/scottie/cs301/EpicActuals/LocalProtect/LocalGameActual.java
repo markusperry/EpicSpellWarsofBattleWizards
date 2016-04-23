@@ -14,8 +14,6 @@ import scottie.cs301.Imports.GameFramework.GamePlayer;
 import scottie.cs301.Imports.GameFramework.LocalGame;
 import scottie.cs301.Imports.GameFramework.actionMsg.GameAction;
 
-import static java.util.Arrays.copyOf;
-
 /**
  * Created by Zimmerms18 on 3/30/2016.
  * <p/>
@@ -28,8 +26,9 @@ import static java.util.Arrays.copyOf;
  */
 public class LocalGameActual
         extends LocalGame {
-    public static LocalGameActual theGame;
+
     protected GameStateActual masterState = null;
+    public static LocalGameActual theGame;
 
     public static PlayerDataNode[] playerDataNodes;
     public final static Deck DECK = new Deck(); //static reference array
@@ -38,17 +37,16 @@ public class LocalGameActual
 
 
     public LocalGameActual(int numPlayers) {
-        theGame = this;
         masterState = new GameStateActual(numPlayers);
+        theGame = this;
         dummy.forceId(5);
     }
 
     @Override
     protected void sendUpdatedStateTo(GamePlayer p) {
-        p.sendInfo(new GameStateActual
-                (STATIC.idOf(p),
-                        masterState
-                ));
+        GameStateActual stateForPlayer = new GameStateActual(masterState);
+        p.sendInfo(stateForPlayer);
+
     } //takes state and passes it along
 
     @Override
