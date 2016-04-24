@@ -1,6 +1,7 @@
 package scottie.cs301.EpicActuals.Resources.Cards.CardActuals;
 
 import java.io.Serializable;
+import java.util.Random;
 
 import scottie.cs301.EpicActuals.Resources.Cards.Card;
 import scottie.cs301.EpicActuals.Resources.Info.GameStateActual;
@@ -11,28 +12,45 @@ import scottie.cs301.Imports.GameFramework.R;
  *
  * deals damage to strongest player based die roll
  */
-public class Gorenado extends CardNode implements Serializable{
+public class Gorenado extends Card implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
-    protected Gorenado() {
-        super(28, 2, 3, R.drawable.gorenado, SCHOOL.PRIMAL);
+    public Gorenado() {
+        super(28, 2, 3, R.drawable.gorenado);
     }
 
+
     @Override
-    public void resolve(GameStateActual currentState, int[] spell, int myCasterNum) {
-        // finds strongest player, rolls die, and deals damage accordingly
-        int foe = returnStrongest(currentState);
+    public void resolve(GameStateActual currentState, int myCasterID) {
+        int strongest = 0;
+        int foeID = 0;
 
-        int roll = rollDie() * 2;
+        for (int i = 0; i < currentState.playerHealths.length; i++)
+        {
+            if (currentState.playerHealths[i]>=strongest)
+            {
+                strongest = currentState.playerHealths[i];
+                foeID = i;
+            }
+        }
 
-        if(roll <= 4) {
-            damage(foe, 2, currentState);
+        Random gen = new Random();
+
+        int roll = (gen.nextInt(6)+1)+(gen.nextInt(6)+1);
+
+        if (roll<=4)
+        {
+            currentState.damage(2,foeID);
         }
-        else if(roll <= 9) {
-            damage(foe, 3, currentState);
+
+        else if (roll<=9)
+        {
+            currentState.damage(3,foeID);
         }
-        else {
-            damage(foe,6, currentState);
+
+        else
+        {
+            currentState.damage(6,foeID);
         }
     }
 }

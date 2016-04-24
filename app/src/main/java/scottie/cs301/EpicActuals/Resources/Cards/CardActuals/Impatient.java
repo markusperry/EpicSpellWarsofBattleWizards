@@ -11,22 +11,15 @@ import scottie.cs301.Imports.GameFramework.R;
  *
  * deals 1 damage to each player
  */
-public class Impatient extends CardNode implements Serializable{
+public class Impatient extends Card implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
-    protected Impatient() {
-        super(3, 100, 2, R.drawable.impatient, SCHOOL.ARCANE);
+    public Impatient() {
+        super(3, 100, 2, R.drawable.impatient);
     }
 
     @Override
-    public void resolve(GameStateActual currentState, int[] spell, int myCasterNum) {
-        // finds player to left and goes counterclockwise in a circle, dealing 1 damage
-        int left = returnLeft(myCasterNum, currentState);
-
-        while (left != myCasterNum) {
-            left = returnLeft(left, currentState);
-
-            damage(left, 1, currentState);
-        }
+    public void resolve(GameStateActual currentState, int myCasterID) {
+        currentState.damageAll(1,myCasterID);
     }
 }

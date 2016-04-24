@@ -12,22 +12,17 @@ import scottie.cs301.Imports.GameFramework.R;
  *
  * deals 3 damage to a random foe
  */
-public class MindAltering extends CardNode implements Serializable{
+public class MindAltering extends Card implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
-    protected MindAltering() {
-        super(6, 0, 2, R.drawable.mindaltering, SCHOOL.ILLUSION);
+    public MindAltering() {
+        super(6, 0, 2, R.drawable.mindaltering);
     }
 
     @Override
-    public void resolve(GameStateActual currentState, int[] spell, int myCasterNum) {
-        // finds number of players and deals 3 damage to random one
-        int numPlayers = returnNumPlayers(currentState);
-
-        Random rand = new Random();
-        int foe = rand.nextInt(numPlayers) - 1;
-
-        damage(foe, 3, currentState);
-
+    public void resolve(GameStateActual currentState, int myCasterID) {
+        Random gen = new Random();
+        int foe = gen.nextInt(currentState.playerHealths.length);
+        currentState.damage(3,foe);
     }
 }

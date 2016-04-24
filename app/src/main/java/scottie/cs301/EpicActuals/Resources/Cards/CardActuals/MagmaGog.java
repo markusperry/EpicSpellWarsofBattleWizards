@@ -11,18 +11,21 @@ import scottie.cs301.Imports.GameFramework.R;
  *
  * deals 3 damage to player to the left
  */
-public class MagmaGog extends CardNode implements Serializable{
+public class MagmaGog extends Card implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
-    protected MagmaGog() {
-        super(4, 0, 1, R.drawable.magmagog, SCHOOL.ELEMENTAL);
+    public MagmaGog() {
+        super(4, 0, 1, R.drawable.magmagog);
     }
 
     @Override
-    public void resolve(GameStateActual currentState, int[] spell, int myCasterNum) {
-        // deals 3 damage to player on left
-        int left = returnLeft(myCasterNum, currentState);
-        damage(left, 3, currentState);
+    public void resolve(GameStateActual currentState, int myCasterID) {
+        int foe = myCasterID--;
+        if (foe<0)
+        {
+            foe=3;
+        }
 
+        currentState.damage(3,foe);
     }
 }

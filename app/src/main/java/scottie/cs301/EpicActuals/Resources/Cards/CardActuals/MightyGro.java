@@ -11,20 +11,30 @@ import scottie.cs301.Imports.GameFramework.R;
  *
  * heals caster by 2. if caster is the weakest player, he heals additional 1 health point
  */
-public class MightyGro extends CardNode implements Serializable{
+public class MightyGro extends Card implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
-    protected MightyGro() {
-        super(57, 0, 2, R.drawable.mightygro, SCHOOL.PRIMAL);
+    public MightyGro() {
+        super(57, 0, 2, R.drawable.mightygro);
     }
 
     @Override
-    public void resolve(GameStateActual currentState, int[] spell, int myCasterNum) {
-        heal(myCasterNum, 2, currentState);
-        int weakest = returnWeakest(currentState);
+    public void resolve(GameStateActual currentState, int myCasterID) {
+        int weakest = 0;
+        int foeID = 0;
+        for (int i = 0; i < currentState.playerHealths.length; i++)
+        {
+            if (currentState.playerHealths[i]<=weakest)
+            {
+                weakest = currentState.playerHealths[i];
+                foeID = i;
+            }
+        }
 
-        if (weakest == myCasterNum) {
-            heal(myCasterNum, 1, currentState);
+        currentState.playerHealths[myCasterID] +=2;
+        if (foeID==myCasterID)
+        {
+            currentState.playerHealths[myCasterID]+=1;
         }
     }
 }

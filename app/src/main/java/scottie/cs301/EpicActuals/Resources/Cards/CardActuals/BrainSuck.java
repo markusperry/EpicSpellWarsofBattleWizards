@@ -1,6 +1,7 @@
 package scottie.cs301.EpicActuals.Resources.Cards.CardActuals;
 
 import java.io.Serializable;
+import java.util.Random;
 
 import scottie.cs301.EpicActuals.Resources.Cards.Card;
 import scottie.cs301.EpicActuals.Resources.Info.GameStateActual;
@@ -11,27 +12,33 @@ import scottie.cs301.Imports.GameFramework.R;
  *
  * deals out damage to player based on die roll
  */
-public class BrainSuck extends CardNode implements Serializable{
+public class BrainSuck extends Card implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
-    protected BrainSuck() {
-        super(18, 15, 3, R.drawable.brainsuck, SCHOOL.ILLUSION);
+    public BrainSuck() {
+        super(18, 15, 3, R.drawable.brainsuck);
     }
 
     @Override
-    public void resolve(GameStateActual currentState, int[] spell, int myCasterNum) {
-        int foe = chooseFoe(myCasterNum, currentState);
+    public void resolve(GameStateActual currentState, int myCasterID) {
+        Random gen = new Random();
+        int foe = gen.nextInt(4);
 
-        int roll = rollDie() * 2;
+        int roll = gen.nextInt(6)+1;
 
-        if (roll <= 4) {
-            damage(foe, 1, currentState);
+        if (roll<=4)
+        {
+            currentState.damage(1,foe);
         }
-        else if (roll <= 9) {
-            damage(foe, 3, currentState);
+
+        else if (roll<=9)
+        {
+            currentState.damage(3,foe);
         }
-        else {
-            damage(foe, 4, currentState);
+
+        else
+        {
+            currentState.damage(4,foe);
         }
     }
 }

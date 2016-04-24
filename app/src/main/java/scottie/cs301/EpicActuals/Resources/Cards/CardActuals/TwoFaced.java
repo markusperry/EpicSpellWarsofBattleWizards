@@ -1,6 +1,7 @@
 package scottie.cs301.EpicActuals.Resources.Cards.CardActuals;
 
 import java.io.Serializable;
+import java.util.Random;
 
 import scottie.cs301.EpicActuals.Resources.Cards.Card;
 import scottie.cs301.EpicActuals.Resources.Info.GameStateActual;
@@ -11,17 +12,20 @@ import scottie.cs301.Imports.GameFramework.R;
  *
  * deals two damage to a foe
  */
-public class TwoFaced extends CardNode implements Serializable{
+public class TwoFaced extends Card implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
-    protected TwoFaced() {
-        super(12, 0, 2, R.drawable.twofaced, SCHOOL.ARCANE);
+    public TwoFaced() {
+        super(12, 0, 2, R.drawable.twofaced);
     }
 
     @Override
-    public void resolve(GameStateActual currentState, int[] spell, int myCasterNum) {
-        // chooses foe and deals 2 damage
-        int foe  = chooseFoe(myCasterNum, currentState);
-        damage(foe, 2, currentState);
+    public void resolve(GameStateActual currentState, int myCasterID) {
+        Random gen = new Random();
+
+        int foe = gen.nextInt(currentState.playerHealths.length);
+
+        currentState.damage(2,foe);
+
     }
 }

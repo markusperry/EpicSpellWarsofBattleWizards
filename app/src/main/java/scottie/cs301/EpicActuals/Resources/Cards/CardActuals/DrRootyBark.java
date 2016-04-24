@@ -1,6 +1,7 @@
 package scottie.cs301.EpicActuals.Resources.Cards.CardActuals;
 
 import java.io.Serializable;
+import java.util.Random;
 
 import scottie.cs301.EpicActuals.Resources.Cards.Card;
 import scottie.cs301.EpicActuals.Resources.Info.GameStateActual;
@@ -11,29 +12,29 @@ import scottie.cs301.Imports.GameFramework.R;
  *
  * heals the player casting it, all the foes roll and if they roll a 6, they will heal 3
  */
-public class DrRootyBark extends CardNode implements Serializable{
+public class DrRootyBark extends Card implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
-    protected DrRootyBark() {
-        super(54, 0, 1, R.drawable.drrootybark, SCHOOL.PRIMAL);
+    public DrRootyBark() {
+        super(54, 0, 1, R.drawable.drrootybark);
     }
 
+
     @Override
-    public void resolve(GameStateActual currentState, int[] spell, int myCasterNum) {
-        // heal yourself
-        heal(myCasterNum, 3, currentState);
+    public void resolve(GameStateActual currentState, int myCasterID) {
+        currentState.playerHealths[myCasterID] +=3;
 
-        // initialize foe to the left
-        int foe = returnLeft(myCasterNum, currentState);
+        Random gen = new Random();
+        int roll = 0;
 
-        // cycle through all foes
-        while(foe != myCasterNum) {
-            // all foes roll and if they roll 6- heals 3 hp
-            int roll = rollDie();
-            if (roll == 6) {
-                heal(foe, 3, currentState);
+        for (int i = 0; i < currentState.playerHealths.length; i++)
+        {
+            roll = gen.nextInt(6)+1;
+            if (roll==6)
+            {
+                currentState.playerHealths[i] +=3;
             }
-            foe = returnLeft(foe, currentState);
         }
+
     }
 }

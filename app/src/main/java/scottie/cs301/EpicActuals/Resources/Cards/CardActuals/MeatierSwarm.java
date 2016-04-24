@@ -1,6 +1,7 @@
 package scottie.cs301.EpicActuals.Resources.Cards.CardActuals;
 
 import java.io.Serializable;
+import java.util.Random;
 
 import scottie.cs301.EpicActuals.Resources.Cards.Card;
 import scottie.cs301.EpicActuals.Resources.Info.GameStateActual;
@@ -11,28 +12,43 @@ import scottie.cs301.Imports.GameFramework.R;
  *
  * deals damage based on dice roll to strongest player
  */
-public class MeatierSwarm extends CardNode implements Serializable{
+public class MeatierSwarm extends Card implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
-    protected MeatierSwarm() {
-        super(30, 20, 3, R.drawable.meatierswarm, SCHOOL.ELEMENTAL);
+    public MeatierSwarm() {
+        super(30, 20, 3, R.drawable.meatierswarm);
     }
 
     @Override
-    public void resolve(GameStateActual currentState, int[] spell, int myCasterNum) {
-        // finds strongest foe, rolls die, and deals damage accordingly
-        int foe = returnStrongest(currentState);
-
-        int roll = rollDie() * 2;
-
-        if(roll <= 4) {
-            damage(foe, 1, currentState);
+    public void resolve(GameStateActual currentState, int myCasterID) {
+        int strongest = 0;
+        int foeID = 0;
+        for (int i = 0; i < currentState.playerHealths.length; i++)
+        {
+            if (currentState.playerHealths[i]>=strongest)
+            {
+                strongest = currentState.playerHealths[i];
+                foeID = i;
+            }
         }
-        else if(roll <= 9) {
-            damage(foe, 3, currentState);
+
+        Random gen = new Random();
+
+        int roll = (gen.nextInt(6)+1)+(gen.nextInt(6)+1);
+
+        if (roll<=4)
+        {
+            currentState.damage(1,foeID);
         }
-        else {
-            damage(foe,4, currentState);
+
+        else if (roll<=9)
+        {
+            currentState.damage(3,foeID);
+        }
+
+        else
+        {
+            currentState.damage(4,foeID);
         }
     }
 }

@@ -1,6 +1,7 @@
 package scottie.cs301.EpicActuals.Resources.Cards.CardActuals;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import scottie.cs301.EpicActuals.Resources.Cards.Card;
 import scottie.cs301.EpicActuals.Resources.Info.GameStateActual;
@@ -11,25 +12,26 @@ import scottie.cs301.Imports.GameFramework.R;
  *
  * deals out damage to each player based on how far away from the current player they are going counterclockwise
  */
-public class Boulderiffic extends CardNode implements Serializable {
+public class Boulderiffic extends Card implements Serializable {
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
-    protected Boulderiffic() {
-        super(2, 0, 2, R.drawable.boulderiffic, SCHOOL.PRIMAL);
+    public Boulderiffic() {
+        super(2, 0, 2, R.drawable.boulderiffic);
     }
 
+
     @Override
-    public void resolve(GameStateActual currentState, int[] spell, int myCasterNum) {
-        // finds player to left and initializes count
-        int count = 0;
-        int curPlayer = returnLeft(myCasterNum, currentState);
+    public void resolve(GameStateActual currentState, int myCasterID) {
+        ArrayList<Integer> players = new ArrayList<Integer>();
+        players.add(0);
+        players.add(1);
+        players.add(2);
+        players.add(3);
+        players.remove(myCasterID);
 
-        // deals out damage to players in the circuit based on the number of spaces away from the current player they are
-       while (curPlayer != myCasterNum) {
-           curPlayer = returnLeft(curPlayer, currentState);
-           count++;
-
-           damage(curPlayer, count, currentState);
-       }
+        for (int i = 1; i <=3; i++)
+        {
+            currentState.damageMultiple(1*i,players);
+        }
     }
 }

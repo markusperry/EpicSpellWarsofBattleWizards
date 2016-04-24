@@ -11,17 +11,26 @@ import scottie.cs301.Imports.GameFramework.R;
  *
  * deals 3 damage to the strongest
  */
-public class ThaiFoon extends CardNode implements Serializable{
+public class ThaiFoon extends Card implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
-    protected ThaiFoon() {
-        super(10, 0, 1, R.drawable.thaifoon, SCHOOL.ELEMENTAL);
+    public ThaiFoon() {
+        super(10, 0, 1, R.drawable.thaifoon);
     }
 
     @Override
-    public void resolve(GameStateActual currentState, int[] spell, int myCasterNum) {
-        // finds strongest player and deals 3 damage
-        int strongest = returnStrongest(currentState);
-        damage(strongest,3, currentState);
+    public void resolve(GameStateActual currentState, int myCasterID) {
+        int strongest = 0;
+        int foeID = 0;
+        for (int i = 0; i < currentState.playerHealths.length; i++)
+        {
+            if (currentState.playerHealths[i]>=strongest)
+            {
+                strongest = currentState.playerHealths[i];
+                foeID = i;
+            }
+        }
+
+        currentState.damage(3,foeID);
     }
 }

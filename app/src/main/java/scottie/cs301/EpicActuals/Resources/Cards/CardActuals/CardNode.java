@@ -24,18 +24,15 @@ public abstract class CardNode extends Card implements Serializable{
      * @param myInit    card initiative
      * @param myPlace   card position
      * @param myImage   image resource associated with card
-     * @param mySchool  SCHOOL of card
      */
     protected CardNode(int myID,
                        int myInit,
                        int myPlace,
-                       int myImage,
-                       SCHOOL mySchool) {
+                       int myImage) {
         super(myID,
                 myInit,
                 myPlace,
-                myImage,
-                mySchool);
+                myImage);
 
 
     } //Move along; move along.

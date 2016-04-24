@@ -1,8 +1,10 @@
 package scottie.cs301.EpicActuals.Resources.Actions;
 
-import android.util.Log;
+import java.util.ArrayList;
 
+import scottie.cs301.EpicActuals.Resources.Cards.Card;
 import scottie.cs301.Imports.GameFramework.GamePlayer;
+import scottie.cs301.Imports.GameFramework.actionMsg.GameAction;
 
 /**
  * Created by Zimmerms18 on 3/30/2016.
@@ -13,14 +15,12 @@ import scottie.cs301.Imports.GameFramework.GamePlayer;
  * The main player action.
  * Sending three cards as int indices that refer to the DECK element.
  */
-public class SendSpell extends ActionAbstract {
-    public final int[] theSpell; //the three cards being sent
+public class SendSpell extends GameAction{
+    public ArrayList<Card> theSpell; //the three cards being sent
 
-    public SendSpell(GamePlayer player, int[] mySpell) //basic constructor
+    public SendSpell(GamePlayer player, ArrayList<Card> inComingSpell) //basic constructor
     {
-
-        super(player, ACTION.Spell);
-        Log.i("Player: ", ""+getPlayer().toString());
-        theSpell = mySpell;
+        super(player);
+        theSpell = inComingSpell;
     }
 }

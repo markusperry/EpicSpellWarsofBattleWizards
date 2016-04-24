@@ -1,6 +1,7 @@
 package scottie.cs301.EpicActuals.Resources.Cards.CardActuals;
 
 import java.io.Serializable;
+import java.util.Random;
 
 import scottie.cs301.EpicActuals.Resources.Cards.Card;
 import scottie.cs301.EpicActuals.Resources.Info.GameStateActual;
@@ -11,33 +12,33 @@ import scottie.cs301.Imports.GameFramework.R;
  *
  * deals out damage based on die roll to player to the left and his left
  */
-public class ConeOfAcid extends CardNode implements Serializable{
+public class ConeOfAcid extends Card implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
-    protected ConeOfAcid() {
-        super(21, 4, 3, R.drawable.coneofacid, SCHOOL.ARCANE);
+    public ConeOfAcid() {
+        super(21, 4, 3, R.drawable.coneofacid);
     }
 
     @Override
-    public void resolve(GameStateActual currentState, int[] spell, int myCasterNum) {
-        // finds the two foes to the left
-        int foeL = returnLeft(myCasterNum, currentState);
-        int foeR = returnRight(myCasterNum, currentState);
+    public void resolve(GameStateActual currentState, int myCasterID) {
+        Random gen = new Random();
+        int foe = gen.nextInt(4);
 
-        // rolls die and deals damage based on die roll
-        int roll = rollDie() * 2;
+        int roll = (gen.nextInt(6)+1)+(gen.nextInt(6)+1);
 
-        if(roll <= 4) {
-            damage(foeL, 1, currentState);
-            damage(foeR, 1, currentState);
+        if (roll<=4)
+        {
+            currentState.damage(1,foe);
         }
-        else if(roll <= 9) {
-            damage(foeL, 2, currentState);
-            damage(foeR, 2, currentState);
+
+        else if (roll<=9)
+        {
+            currentState.damage(2,foe);
         }
-        else {
-            damage(foeL, 4, currentState);
-            damage(foeR, 4, currentState);
+
+        else
+        {
+            currentState.damage(4,foe);
         }
     }
 }

@@ -1,6 +1,7 @@
 package scottie.cs301.EpicActuals.Resources.Cards.CardActuals;
 
 import java.io.Serializable;
+import java.util.Random;
 
 import scottie.cs301.EpicActuals.Resources.Cards.Card;
 import scottie.cs301.EpicActuals.Resources.Info.GameStateActual;
@@ -11,31 +12,35 @@ import scottie.cs301.Imports.GameFramework.R;
  *
  * deals out damage to foe on right based on die roll
  */
-public class DeathWish extends CardNode implements Serializable{
+public class DeathWish extends Card implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
-    protected DeathWish() {
-        super(22, 8, 3, R.drawable.deathwish, SCHOOL.DARK);
+    public DeathWish() {
+        super(22, 8, 3, R.drawable.deathwish);
     }
 
-    @Override
-    public void resolve(GameStateActual currentState, int[] spell, int myCasterNum) {
-        // finds foe to the right and deals damage based on die roll
-        int foe = returnRight(myCasterNum, currentState);
+    public void resolve(GameStateActual currentState, int myCasterID) {
+        Random gen = new Random();
+        int foe = gen.nextInt(4);
 
-        int roll = rollDie();
+        int roll = (gen.nextInt(6)+1)+(gen.nextInt(6)+1);
 
-        if(roll <= 4) {
-            damage(foe, 2, currentState);
-            damage(myCasterNum, 1, currentState);
+        if (roll<=4)
+        {
+            currentState.damage(2,foe);
+            currentState.damage(1,myCasterID);
         }
-        else if(roll <= 9) {
-            damage(foe, 3, currentState);
-            damage(myCasterNum, 1, currentState);
+
+        else if (roll<=9)
+        {
+            currentState.damage(3,foe);
+            currentState.damage(1,myCasterID);
         }
-        else {
-            damage(foe,5, currentState);
-            damage(myCasterNum, 1, currentState);
+
+        else
+        {
+            currentState.damage(5,foe);
+            currentState.damage(1,myCasterID);
         }
     }
 }

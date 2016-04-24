@@ -12,21 +12,18 @@ import scottie.cs301.Imports.GameFramework.R;
  *
  * deals a random foe 3 damage
  */
-public class ProfessorPresto extends CardNode implements Serializable{
+public class ProfessorPresto extends Card implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
-    protected ProfessorPresto() {
-        super(8, 0, 1, R.drawable.professorpresto, SCHOOL.ARCANE);
+    public ProfessorPresto() {
+        super(8, 0, 1, R.drawable.professorpresto);
     }
 
     @Override
-    public void resolve(GameStateActual currentState, int[] spell, int myCasterNum) {
-        // finds a random foe and deals 3 damage
-        int numPlayers = returnNumPlayers(currentState);
+    public void resolve(GameStateActual currentState, int myCasterID) {
+        Random gen = new Random();
+        int foe = gen.nextInt(currentState.playerHealths.length);
 
-        Random rand = new Random();
-        int foe = rand.nextInt(numPlayers) - 1;
-
-        damage(foe, 3, currentState);
+        currentState.damage(3,foe);
     }
 }

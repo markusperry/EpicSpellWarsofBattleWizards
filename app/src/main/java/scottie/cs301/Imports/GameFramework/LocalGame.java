@@ -1,5 +1,10 @@
 package scottie.cs301.Imports.GameFramework;
 
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.util.Log;
+
 import scottie.cs301.Imports.GameFramework.actionMsg.GameAction;
 import scottie.cs301.Imports.GameFramework.actionMsg.GameOverAckAction;
 import scottie.cs301.Imports.GameFramework.actionMsg.MyNameIsAction;
@@ -12,11 +17,6 @@ import scottie.cs301.Imports.GameFramework.infoMsg.NotYourTurnInfo;
 import scottie.cs301.Imports.GameFramework.infoMsg.StartGameInfo;
 import scottie.cs301.Imports.GameFramework.util.GameTimer;
 import scottie.cs301.Imports.GameFramework.util.Tickable;
-
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.util.Log;
 
 /**
  * A class that knows how to play the game. The data in this class represent the
@@ -344,18 +344,22 @@ public abstract class LocalGame implements Game, Tickable {
 	/**
 	 * sends a given action to the Game object  
 	 * 
-	 * @param the
+	 * @param action
 	 *            player requesting the action
 	 */
 	public final void sendAction(GameAction action) {
-		if (myHandler == null) return; // give up if no handler
-		
+		if (myHandler == null) {
+			try{Thread.sleep(1000);}catch(InterruptedException ix){}
+			if (myHandler==null) return; // give up if no handler
+		}
+
 		// package the action into a message and send it to the handler
 		Message msg = new Message();
 		msg.obj = action;
 		myHandler.dispatchMessage(msg);
 	}
-	
+
+
 	/**
 	 * sends a timer action to the game
 	 */

@@ -11,15 +11,15 @@ import scottie.cs301.Imports.GameFramework.R;
  *
  * heals caster 2 points
  */
-public class KingOberon extends CardNode implements Serializable{
+public class KingOberon extends Card implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
-    protected KingOberon() {
-        super(56, 0, 1, R.drawable.kingoberon, SCHOOL.PRIMAL);
+    public KingOberon() {
+        super(56, 0, 1, R.drawable.kingoberon);
     }
 
     @Override
-    public void resolve(GameStateActual currentState, int[] spell, int myCasterNum) {
-        heal(myCasterNum, 2, currentState);
+    public void resolve(GameStateActual currentState, int myCasterID) {
+        currentState.playerHealths[myCasterID] +=2;
     }
 }

@@ -1,6 +1,7 @@
 package scottie.cs301.EpicActuals.Resources.Cards.CardActuals;
 
 import java.io.Serializable;
+import java.util.Random;
 
 import scottie.cs301.EpicActuals.Resources.Cards.Card;
 import scottie.cs301.EpicActuals.Resources.Info.GameStateActual;
@@ -11,20 +12,48 @@ import scottie.cs301.Imports.GameFramework.R;
  *
  * deals damage to strongest player equal to number of players left alive
  */
-public class MidnightMerlin extends CardNode implements Serializable{
+public class MidnightMerlin extends Card implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
-    protected MidnightMerlin() {
-        super(5, 0, 1, R.drawable.midnightmerlin, SCHOOL.DARK);
+    public MidnightMerlin() {
+        super(5, 0, 1, R.drawable.midnightmerlin);
     }
 
     @Override
-    public void resolve(GameStateActual currentState, int[] spell, int myCasterNum) {
-        // finds number of players left alive and deals equal damage to strongest player
-        int strongest = returnStrongest(currentState);
-        int alive = returnAlive(currentState);
+    public void resolve(GameStateActual currentState, int myCasterID) {
+        int strongest = 0;
+        int foeID = 0;
+        int numAlive= 0;
+        for (int i = 0; i < currentState.playerHealths.length; i++)
+        {
+            if (currentState.playerHealths[i]>=strongest)
+            {
+                strongest = currentState.playerHealths[i];
+                foeID = i;
+            }
+            if (currentState.playerHealths[i]>0)
+            {
+                numAlive++;
+            }
+        }
 
-        damage(strongest, alive, currentState);
+        Random gen = new Random();
 
+        int roll = (gen.nextInt(6)+1)+(gen.nextInt(6)+1);
+
+        if (roll<=4)
+        {
+            currentState.damage(2*numAlive,foeID);
+        }
+
+        else if (roll<=9)
+        {
+            currentState.damage(3*numAlive,foeID);
+        }
+
+        else
+        {
+            currentState.damage(4*numAlive,foeID);
+        }
     }
 }

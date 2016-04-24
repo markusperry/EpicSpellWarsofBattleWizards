@@ -11,17 +11,18 @@ import scottie.cs301.Imports.GameFramework.R;
  *
  * This card heals the current player by 5 health points
  */
-public class Ballsy extends CardNode implements Serializable{
+public class Ballsy extends Card implements Serializable{
 
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
-    protected Ballsy() {
-        super(1, 0, 2, R.drawable.ballsy, SCHOOL.ILLUSION);
+    public Ballsy() {
+        super(1, 0, 2, R.drawable.ballsy);
     }
 
+
     @Override
-    public void resolve(GameStateActual currentState, int[] spell, int myCasterNum) {
-        // heal myself 5 points
-        heal(myCasterNum, 5, currentState);
+    public void resolve(GameStateActual currentState, int myCasterID) {
+        //heal 5 points of damage
+        currentState.playerHealths[myCasterID] +=5;
     }
 }

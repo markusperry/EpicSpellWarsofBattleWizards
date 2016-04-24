@@ -1,8 +1,8 @@
 package scottie.cs301.EpicActuals.Resources.Cards.CardActuals;
 
 import java.io.Serializable;
+import java.util.Random;
 
-import scottie.cs301.EpicActuals.LocalProtect.LocalGameActual;
 import scottie.cs301.EpicActuals.Resources.Cards.Card;
 import scottie.cs301.EpicActuals.Resources.Info.GameStateActual;
 import scottie.cs301.Imports.GameFramework.R;
@@ -12,24 +12,18 @@ import scottie.cs301.Imports.GameFramework.R;
  *
  * deals 2 damage to a foe. If that foe dies, deal 2 damage to another foe, and so on
  */
-public class TheDeathFairy extends CardNode implements Serializable{
+public class TheDeathFairy extends Card implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
-    protected TheDeathFairy() {
-        super(11, 0, 1, R.drawable.thedeathfairy, SCHOOL.DARK);
+    public TheDeathFairy() {
+        super(11, 0, 1, R.drawable.thedeathfairy);
     }
 
     @Override
-    public void resolve(GameStateActual currentState, int[] spell, int myCasterNum) {
-        // chooses a foe and deals 2 damage
-        int foe = chooseFoe(myCasterNum, currentState);
+    public void resolve(GameStateActual currentState, int myCasterID) {
+        Random gen = new Random();
+        int foe = gen.nextInt(currentState.playerHealths.length);
 
-        damage(foe, 2, currentState);
-
-        // if that foe dies, repeat
-        if (currentState.playerHealths[foe] <= 0) {
-            foe = chooseFoe(myCasterNum, currentState);
-            damage(foe, 2, currentState);
-        }
+        currentState.damage(2,foe);
     }
 }

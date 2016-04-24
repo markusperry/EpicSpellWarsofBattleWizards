@@ -1,6 +1,7 @@
 package scottie.cs301.EpicActuals.Resources.Cards.CardActuals;
 
 import java.io.Serializable;
+import java.util.Random;
 
 import scottie.cs301.EpicActuals.Resources.Cards.Card;
 import scottie.cs301.EpicActuals.Resources.Info.GameStateActual;
@@ -11,25 +12,19 @@ import scottie.cs301.Imports.GameFramework.R;
  *
  * deals out damage to each foe based on number rolled on die
  */
-public class BenVoodoo extends CardNode implements Serializable {
+public class BenVoodoo extends Card implements Serializable {
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
-    protected BenVoodoo() {
-        super(17, 0, 1, R.drawable.benvoodoo, SCHOOL.DARK);
+    public BenVoodoo() {
+        super(17, 0, 1, R.drawable.benvoodoo);
     }
 
     @Override
-    public void resolve(GameStateActual currentState, int[] spell, int myCasterNum) {
-        //finds foe to the left of current player
-        int foe = returnLeft(myCasterNum, currentState);
-        int roll;
+    public void resolve(GameStateActual currentState, int myCasterID) {
+        Random gen = new Random();
+        int damageRoll = gen.nextInt(6)+1;
 
-        // deals out damage to each foe based on the number rolled
-        while(foe != myCasterNum) {
-            foe = returnLeft(foe,currentState);
-            roll = rollDie();
-            damage(foe, roll, currentState);
+        currentState.damageAll(damageRoll, myCasterID);
 
-        }
     }
 }

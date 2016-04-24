@@ -1,6 +1,7 @@
 package scottie.cs301.EpicActuals.Resources.Cards.CardActuals;
 
 import java.io.Serializable;
+import java.util.Random;
 
 import scottie.cs301.EpicActuals.Resources.Cards.Card;
 import scottie.cs301.EpicActuals.Resources.Info.GameStateActual;
@@ -11,30 +12,36 @@ import scottie.cs301.Imports.GameFramework.R;
  *
  * deals damage to foe based on die roll
  */
-public class Devilicious extends CardNode implements Serializable{
+public class Devilicious extends Card implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
-    protected Devilicious() {
-        super(23, 0, 2, R.drawable.devilicious, SCHOOL.DARK);
+    public Devilicious() {
+        super(23, 0, 2, R.drawable.devilicious);
     }
 
+
     @Override
-    public void resolve(GameStateActual currentState, int[] spell, int myCasterNum) {
-        // chooses foe, rolls die, and deals damage based on die(s) roll
-        int foe = chooseFoe(myCasterNum, currentState);
+    public void resolve(GameStateActual currentState, int myCasterID) {
+        Random gen = new Random();
+        int foe = gen.nextInt(4);
 
-        int roll = rollDie() * 2;
+        int roll = (gen.nextInt(6)+1)+(gen.nextInt(6)+1);
 
-        if(roll <= 4) {
-            damage(foe, 2, currentState);
+        if (roll<=4)
+        {
+            currentState.damage(2,foe);
         }
-        else if(roll <= 9) {
-            damage(foe, 4, currentState);
-            damage(myCasterNum, 1, currentState);
+
+        else if (roll<=9)
+        {
+            currentState.damage(4,foe);
+            currentState.damage(1,myCasterID);
         }
-        else {
-            damage(foe,5, currentState);
-            damage(myCasterNum, 2, currentState);
+
+        else
+        {
+            currentState.damage(5,foe);
+            currentState.damage(2,myCasterID);
         }
     }
 }

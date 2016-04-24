@@ -63,6 +63,6 @@ public class MainActivity extends GameMainActivity {
 
     @Override
     public LocalGame createLocalGame() {
-        return new LocalGameActual(4);
+        return new LocalGameActual();
     } //inheritted method to launch game
 }

@@ -1,15 +1,10 @@
 package scottie.cs301.EpicActuals.LocalProtect;
 
-import scottie.cs301.EpicActuals.Players.ComputerActualRandy;
-import scottie.cs301.EpicActuals.Resources.Actions.OVRD;
-import scottie.cs301.EpicActuals.Resources.Actions.SendChoice;
-import scottie.cs301.EpicActuals.Resources.Actions.SendOverride;
+import java.util.ArrayList;
+
 import scottie.cs301.EpicActuals.Resources.Actions.SendSpell;
-import scottie.cs301.EpicActuals.Resources.Cards.Deck;
+import scottie.cs301.EpicActuals.Resources.Cards.Card;
 import scottie.cs301.EpicActuals.Resources.Info.GameStateActual;
-import scottie.cs301.EpicActuals.Resources.Info.LOCATION;
-import scottie.cs301.EpicActuals.Resources.Info.PlayerDataNode;
-import scottie.cs301.EpicActuals.Resources.Info.STAGE;
 import scottie.cs301.Imports.GameFramework.GamePlayer;
 import scottie.cs301.Imports.GameFramework.LocalGame;
 import scottie.cs301.Imports.GameFramework.actionMsg.GameAction;
@@ -28,18 +23,9 @@ public class LocalGameActual
         extends LocalGame {
 
     protected GameStateActual masterState = null;
-    public static LocalGameActual theGame;
 
-    public static PlayerDataNode[] playerDataNodes;
-    public final static Deck DECK = new Deck(); //static reference array
-
-    private ComputerActualRandy dummy = new ComputerActualRandy("Dummy");
-
-
-    public LocalGameActual(int numPlayers) {
-        masterState = new GameStateActual(numPlayers);
-        theGame = this;
-        dummy.forceId(5);
+    public LocalGameActual() {
+        masterState = new GameStateActual();
     }
 
     @Override
@@ -51,10 +37,8 @@ public class LocalGameActual
 
     @Override
     protected boolean canMove(int playerIdx) {
-        if (playerIdx == -1) {
-            return true;
-        }
-        return masterState.playerStages[playerIdx] == masterState.curStage;
+
+        return playerIdx==masterState.getWhoseTurn();
     }
 
     @Override
@@ -62,75 +46,65 @@ public class LocalGameActual
         if (action == null) {
             return true;
         }
-        return STATIC.convertSendMake(action);
+        else if (action instanceof SendSpell) {
+            SendSpell theSpellAction = (SendSpell) action;
+            int spellLength = theSpellAction.theSpell.size();
+            ArrayList<Card> castedSpell = theSpellAction.theSpell;
+
+            int playerTurn = masterState.getWhoseTurn();
+            if (spellLength == 0)
+            {
+                return false;
+            }
+
+            else
+            {
+                for (Card a :castedSpell)
+                {
+                    a.resolve(masterState,playerTurn);
+                }
+                masterState.dealNewHandTo(playerTurn);
+                playerTurn++;
+                if (playerTurn>=masterState.playerHealths.length)
+                {
+                    masterState.setWhoseTurn(0);
+                }
+                else
+                {
+                    masterState.setWhoseTurn(playerTurn);
+                }
+
+                return true;
+            }
+
+
+        }
+        else
+        {
+            return false;
+        }
     }
 
     @Override
     protected String checkIfGameOver() {
         int numAlive = 0;
-        String lastAlive = "Error";
-        for (int itter = 0; itter < masterState.playerHealths.length; itter++) {
-            int cur = masterState.playerHealths[itter];
-            if (cur != 0) {
-                lastAlive = "" + itter;
+        int numOfLastPlayer = 0;
+        for (int itter = 0; itter < masterState.playerHealths.length; itter++)
+        {
+            if (masterState.playerHealths[itter]<=0)
+            {
                 numAlive++;
-            } else {
-                masterState.playerStages[itter - 1] = STAGE.LockedDead;
+                numOfLastPlayer = itter;
+
             }
         }
-        if (numAlive <= 1) {
-            return lastAlive + " has won the game.";
+        if (numAlive==1)
+        {
+            return "Player "+numOfLastPlayer+" has won!";
         }
-        else {
-
+        else
+        {
             return null;
         }
     } //end game string
-
-    protected boolean makeMove(SendChoice action) {
-        return false;
-    }
-
-    protected boolean makeMove(SendOverride action) {
-        if (action.theOVRDAction == OVRD.AdvanceToCasting) {
-            masterState.curStage = STAGE.WaitingToCast;
-            int[] cardsToResolve = masterState.allCardsFrom(STATIC.locOf(1,LOCATION.Spell),masterState.spellCardLocation);
-            for(int i =0; i<cardsToResolve.length;i++)
-            {
-                DECK.theDeck[cardsToResolve[i]].resolve(masterState,cardsToResolve,1);
-            }
-
-        }
-        if (action.theOVRDAction == OVRD.AdvanceToSelecting) {
-
-            for (int itter = 0; itter < masterState.playerHealths.length; itter++) {
-                if (masterState.playerStages[itter] != STAGE.LockedDead) {
-                    masterState.deal(itter);
-                    masterState.playerStages[itter] = STAGE.SelectingCards;
-
-                }
-            }
-            masterState.curStage = STAGE.SelectingCards;
-        }
-        return true;
-    }
-
-    protected boolean makeMove(SendSpell action) {
-        masterState.addSpell(action.playerID, action.theSpell);
-        masterState.playerStages[action.playerID] = STAGE.DoneSelecting;
-        if (masterState.curStage == STAGE.SelectingCards) {
-            boolean escapeSelectionPhase = false;
-            for (int itter = 0; itter < masterState.playerHealths.length; itter++) {
-                if (masterState.playerStages[itter] != STAGE.LockedDead) {
-                    escapeSelectionPhase = escapeSelectionPhase && (masterState.playerStages[itter] == STAGE.DoneSelecting);
-                }
-            }
-            if (escapeSelectionPhase) {
-                this.sendAction(new SendOverride(dummy, OVRD.AdvanceToCasting));
-                //checkIfGameOver()
-            }
-        }
-
-        return true;
-    }
 }

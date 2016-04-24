@@ -1,6 +1,7 @@
 package scottie.cs301.EpicActuals.Resources.Cards.CardActuals;
 
 import java.io.Serializable;
+import java.util.Random;
 
 import scottie.cs301.EpicActuals.Resources.Cards.Card;
 import scottie.cs301.EpicActuals.Resources.Info.GameStateActual;
@@ -11,28 +12,34 @@ import scottie.cs301.Imports.GameFramework.R;
  *
  * rolls a die(s) and deals damage based on the number rolled
  */
-public class Bedazzlement extends CardNode implements Serializable {
+public class Bedazzlement extends Card implements Serializable {
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
-    protected Bedazzlement() {
-        super(16, 19, 3, R.drawable.bedazzlement, SCHOOL.ILLUSION);
+
+
+    public Bedazzlement() {
+        super(16, 19, 3, R.drawable.bedazzlement);
     }
 
+
     @Override
-    public void resolve(GameStateActual currentState, int[] spell, int myCasterNum) {
-        // finds a foe and deals damage based on number rolled
-        int foe = chooseFoe(myCasterNum, currentState);
+    public void resolve(GameStateActual currentState, int myCasterID) {
+        Random gen = new Random();
+        int nextFoe = gen.nextInt(4);
 
-        int roll = rollDie() * 2;
+        int diceRoll = (gen.nextInt(6)+1)+(gen.nextInt(6)+1);
 
-        if(roll <= 4) {
-            damage(foe,1, currentState);
+        if (diceRoll<=4)
+        {
+            currentState.damage(1,nextFoe);
         }
-        else if (roll <= 9) {
-            damage(foe, 3, currentState);
+        else if (diceRoll<=9)
+        {
+            currentState.damage(3,nextFoe);
         }
-        else {
-            damage(foe, 4, currentState);
+        else
+        {
+            currentState.damage(4,nextFoe);
         }
     }
 }

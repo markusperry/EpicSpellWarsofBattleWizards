@@ -2,21 +2,5 @@
     {
         "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/menu/game_main.xml",
         "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/menu/game_main.xml"
-    },
-    {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/C:\\Users\\mukai18\\Downloads\\EpicSpellWars-master\\app\\build\\intermediates\\res\\merged\\debug\\menu\\game_main.xml",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/C:\\Users\\mukai18\\Downloads\\EpicSpellWars-master\\app\\src\\main\\res\\menu\\game_main.xml"
-    },
-    {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/C:\\Users\\mukai18\\Desktop\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\menu\\game_main.xml",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/C:\\Users\\mukai18\\Desktop\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\menu\\game_main.xml"
-    },
-    {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/C:\\Users\\mukai18\\Desktop\\EpicSpellWarsBeta\\EpicSpellWars-master\\app\\build\\intermediates\\res\\merged\\debug\\menu\\game_main.xml",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/C:\\Users\\mukai18\\Desktop\\EpicSpellWarsBeta\\EpicSpellWars-master\\app\\src\\main\\res\\menu\\game_main.xml"
-    },
-    {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/C:\\Users\\markusperry\\Desktop\\EpicSpellWars\\app\\build\\intermediates\\res\\merged\\debug\\menu\\game_main.xml",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/C:\\Users\\markusperry\\Desktop\\EpicSpellWars\\app\\src\\main\\res\\menu\\game_main.xml"
     }
 ]

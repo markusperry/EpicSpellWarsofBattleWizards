@@ -1,6 +1,7 @@
 package scottie.cs301.EpicActuals.Resources.Cards.CardActuals;
 
 import java.io.Serializable;
+import java.util.Random;
 
 import scottie.cs301.EpicActuals.Resources.Cards.Card;
 import scottie.cs301.EpicActuals.Resources.Info.GameStateActual;
@@ -11,28 +12,35 @@ import scottie.cs301.Imports.GameFramework.R;
  *
  * deals damage to foe on left based on die roll
  */
-public class FistONature extends CardNode implements Serializable{
+public class FistONature extends Card implements Serializable{
     //to satisfy the Serializable interface
     private static final long serialVersionUID = 3339755561382710158L;
-    protected FistONature() {
-        super(27, 14, 3, R.drawable.fistonature, SCHOOL.PRIMAL);
+    public FistONature() {
+        super(27, 14, 3, R.drawable.fistonature);
     }
 
     @Override
-    public void resolve(GameStateActual currentState, int[] spell, int myCasterNum) {
-        // finds foe to left, rolls die, and deals damage accordingly
-        int foe = returnLeft(myCasterNum, currentState);
+    public void resolve(GameStateActual currentState, int myCasterID) {
+        Random gen = new Random();
 
-        int roll = rollDie() * 2;
+        int foe = gen.nextInt(currentState.playerHealths.length);
 
-        if(roll <= 4) {
-            damage(foe, 1, currentState);
+        int roll = (gen.nextInt(6)+1)+(gen.nextInt(6)+1);
+
+        if (roll<=4)
+        {
+            currentState.damage(4,foe);
         }
-        else if(roll <= 9) {
-            damage(foe, 2, currentState);
+
+        else if (roll<=9)
+        {
+            currentState.damage(2,foe);
         }
-        else {
-            damage(foe,4, currentState);
+
+        else
+        {
+            currentState.damage(4,foe);
         }
     }
+
 }

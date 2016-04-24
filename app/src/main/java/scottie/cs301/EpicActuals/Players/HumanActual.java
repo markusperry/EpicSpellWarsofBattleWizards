@@ -1,29 +1,22 @@
 package scottie.cs301.EpicActuals.Players;
 
-import android.media.Image;
+import android.graphics.Color;
 import android.util.Log;
-import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import org.apache.http.auth.NTUserPrincipal;
+import java.util.ArrayList;
 
-import scottie.cs301.EpicActuals.LocalProtect.STATIC;
-import scottie.cs301.EpicActuals.Resources.Actions.CHOICE;
 import scottie.cs301.EpicActuals.Resources.Actions.SendSpell;
-import scottie.cs301.EpicActuals.Resources.Cards.Deck;
+import scottie.cs301.EpicActuals.Resources.Cards.Card;
 import scottie.cs301.EpicActuals.Resources.Info.GameStateActual;
-import scottie.cs301.EpicActuals.Resources.Info.LOCATION;
-import scottie.cs301.EpicActuals.Resources.Info.STAGE;
-import scottie.cs301.Imports.GameFramework.Game;
-import scottie.cs301.Imports.GameFramework.GameHumanPlayer;
 import scottie.cs301.Imports.GameFramework.GameMainActivity;
 import scottie.cs301.Imports.GameFramework.R;
 import scottie.cs301.Imports.GameFramework.infoMsg.GameInfo;
-
-import static java.util.Arrays.copyOf;
+import scottie.cs301.Imports.GameFramework.infoMsg.IllegalMoveInfo;
+import scottie.cs301.Imports.GameFramework.infoMsg.NotYourTurnInfo;
 
 /**
  * Created by Zimmerms18 on 3/30/2016.
@@ -35,11 +28,15 @@ import static java.util.Arrays.copyOf;
  * Receive info and build the GUI.
  * Handle UI and send actions back to Local.
  */
-public class HumanActual extends HumanAbstract implements View.OnClickListener, View.OnLongClickListener {
+public class HumanActual extends HumanAbstract implements View.OnClickListener {
     protected GameStateActual myRecentState; //full copy of most recently received Game State for easier access
     private GameMainActivity myActivity;
+
+
     private ImageButton[] myHandImages;
     private ImageButton[] myFocus;
+
+
     protected ImageButton playerCard1;
     protected ImageButton playerCard2;
     protected ImageButton playerCard3;
@@ -48,7 +45,8 @@ public class HumanActual extends HumanAbstract implements View.OnClickListener, 
     protected ImageButton playerCard6;
     protected ImageButton playerCard7;
     protected ImageButton playerCard8;
-    private int[] myHand;
+
+    private ArrayList<Card> myHand;
 
     protected ImageButton fieldCard1;
     protected ImageButton fieldCard2;
@@ -68,35 +66,29 @@ public class HumanActual extends HumanAbstract implements View.OnClickListener, 
 
     @Override
     public View getTopView() {
-        return myActivity.findViewById(R.id.top_view);
+        return myActivity.findViewById(R.id.cardsToPlay);
     } //inherited from Game Framework
 
     @Override
     public void receiveInfo(GameInfo info) {
-        if (info instanceof GameStateActual) {
-            myRecentState = (GameStateActual) info;
+        if (info instanceof NotYourTurnInfo || info instanceof IllegalMoveInfo)
+        {
+            flash(Color.RED,500);
+            return;
         }
-        populateHand();
+        else if (info instanceof GameStateActual) {
+            myRecentState = (GameStateActual) info;
+            myHand = myRecentState.playerHands.get(playerNum);
+            int playerTurn = myRecentState.getWhoseTurn();
+            setTurnSign(playerTurn);
+            populateHand();
+            Log.i("Player Turn",""+myRecentState.getWhoseTurn());
+        }
+
     } //inherited from Game Framework
 
     public void setAsGui(GameMainActivity activity) {
         myActivity = activity;
-
-
-//
-//
-//        if (myRecentState==null)
-//        {
-//            return;
-//        }
-//        else if (myRecentState.playerHealths.length==3)
-//        {
-//            myActivity.setContentView(R.layout.epic_gui_3);
-//        }
-//        else
-//        {
-        // myActivity.setContentView(R.layout.epic_gui_4);
-        // }
 
         myActivity.setContentView(R.layout.epic_gui_4);
         playerCard1 = (ImageButton) activity.findViewById(R.id.playerCard1);
@@ -140,9 +132,11 @@ public class HumanActual extends HumanAbstract implements View.OnClickListener, 
         myFocus = new ImageButton[]{fieldCard1, fieldCard2, fieldCard3};
 
 
-
         Button readyButton = (Button) activity.findViewById(R.id.readyButton);
         readyButton.setOnClickListener(this);
+
+        Button killButton = (Button)activity.findViewById(R.id.killButton);
+        killButton.setOnClickListener(this);
 
         if (myRecentState != null) {
             receiveInfo(myRecentState);
@@ -152,87 +146,107 @@ public class HumanActual extends HumanAbstract implements View.OnClickListener, 
     } //parse through Recent State and set up GUI elements
 
     public void onClick(View v) {
-        if(myRecentState != null)
-        {
+        if (myRecentState != null) {
 
-        if (v.getId() == R.id.readyButton) {
-            this.onReadyClicked();
-            //Log.i("After Send", "" + myHand.toString());
-        } else {
-            ImageButton clickedCard = (ImageButton) myActivity.findViewById(v.getId());
-            clickedCard.setImageAlpha(382 - clickedCard.getImageAlpha());
-        }
+            if (v.getId() == R.id.readyButton)
+            {
+                this.onReadyClicked();
+                //Log.i("After Send", "" + myHand.toString());
+            }
+
+            else if (v.getId()==R.id.killButton)
+            {
+                System.exit(0);
+            }
+            else
+            {
+                ImageButton clickedCard = (ImageButton) myActivity.findViewById(v.getId());
+                clickedCard.setImageAlpha(382 - clickedCard.getImageAlpha());
+            }
         }
     } //handle various UI actions
 
-    public boolean onLongClick(View v) {
-        return false;
-    } //for use in zoom-in on element
 
     public boolean onReadyClicked() {
-        if(myRecentState.playerStages[playerNum] == STAGE.SelectingCards) {
-            int[] spell = new int[3];
-            int slider = 0;
+            ArrayList<Card> mySpell = new ArrayList<Card>();
             for (int itter = 0; itter < 8; itter++) {
                 if (myHandImages[itter].getImageAlpha() <= 250) {
-                    spell[slider] = itter;
-                    slider++;
-
-                    if (slider == 3) {
+                    mySpell.add(myHand.get(itter));
+                    if (mySpell.size()==3)
+                    {
                         break;
                     }
                 }
             }
+        game.sendAction(new SendSpell(this, mySpell));
+        Log.i("Human Player Spell",""+this);
 
-            //Log.i("Before Send", "" + myHand.toString());
-            game.sendAction(new SendSpell(this, new int[]{myHand[spell[0]], myHand[spell[1]], myHand[spell[2]]}));
             return true;
-        }
-        else
-        {
-            return false;
-        }
 
 
     } //visual feedback for card selection
 
-    public CHOICE respondToQuestion(CHOICE[] validAnswers) {
-        return null;
-    } // contextual response
 
     public void populateHand() {
-        myHand = myRecentState.allCardsFrom(STATIC.locOf(playerNum, LOCATION.Hand), myRecentState.spellCardLocation);
+        playerCard1.setImageResource(myHand.get(0).imageRef);
+        playerCard2.setImageResource(myHand.get(1).imageRef);
+        playerCard3.setImageResource(myHand.get(2).imageRef);
+        playerCard4.setImageResource(myHand.get(3).imageRef);
+        playerCard5.setImageResource(myHand.get(4).imageRef);
+        playerCard6.setImageResource(myHand.get(5).imageRef);
+        playerCard7.setImageResource(myHand.get(6).imageRef);
+        playerCard8.setImageResource(myHand.get(7).imageRef);
 
-        int[] myHandBuffered = copyOf(myHand, 8);
-        myHand = myHandBuffered;
-
-        playerCard1.setImageResource(Deck.theDeck[myHandBuffered[0]].imageRef);
-        playerCard2.setImageResource(Deck.theDeck[myHandBuffered[1]].imageRef);
-        playerCard3.setImageResource(Deck.theDeck[myHandBuffered[2]].imageRef);
-        playerCard4.setImageResource(Deck.theDeck[myHandBuffered[3]].imageRef);
-        playerCard5.setImageResource(Deck.theDeck[myHandBuffered[4]].imageRef);
-        playerCard6.setImageResource(Deck.theDeck[myHandBuffered[5]].imageRef);
-        playerCard7.setImageResource(Deck.theDeck[myHandBuffered[6]].imageRef);
-        playerCard8.setImageResource(Deck.theDeck[myHandBuffered[7]].imageRef);
-
-        for(int itter = 0; itter < 4; itter++)
+        for (int i = 0; i < myHandImages.length; i++)
         {
+            myHandImages[i].setImageAlpha(255);
+        }
+
+        for (int itter = 0; itter < 4; itter++) {
             healths[itter].setText("" + myRecentState.playerHealths[itter]);
         }
 
-        if(myRecentState.focusedCards != null)
-        {
-            int lengthBuffer = myRecentState.focusedCards.length;
-            if (lengthBuffer != 0) {
-                if (lengthBuffer > 3) {
-                    lengthBuffer = 3;
-                }
-                for (int itter = 0; itter < lengthBuffer; itter++) {
-                    myFocus[itter].setImageResource(Deck.theDeck[myRecentState.focusedCards[itter]].imageRef);
-                }
-            }
-        }
     }
 
+    public void setTurnSign(int playerTurn)
+    {
+        View stats1 = myActivity.findViewById(R.id.player1stats);
+        View stats2 = myActivity.findViewById(R.id.player2stats);
+        View stats3 = myActivity.findViewById(R.id.player3stats);
+        View stats4 = myActivity.findViewById(R.id.player4stats);
+
+
+        if (playerTurn==0)
+        {
+            stats1.setBackgroundColor(Color.rgb(140,140,140));
+            stats2.setBackgroundColor(Color.BLACK);
+            stats3.setBackgroundColor(Color.BLACK);
+            stats4.setBackgroundColor(Color.BLACK);
+        }
+
+        else if (playerTurn==1)
+        {
+            stats1.setBackgroundColor(Color.BLACK);
+            stats2.setBackgroundColor(Color.rgb(140, 140, 140));
+            stats3.setBackgroundColor(Color.BLACK);
+            stats4.setBackgroundColor(Color.BLACK);
+        }
+
+        else if (playerTurn==2)
+        {
+            stats1.setBackgroundColor(Color.BLACK);
+            stats2.setBackgroundColor(Color.BLACK);
+            stats3.setBackgroundColor(Color.rgb(140,140,140));
+            stats4.setBackgroundColor(Color.BLACK);
+        }
+
+        else if (playerTurn==3)
+        {
+            stats1.setBackgroundColor(Color.BLACK);
+            stats2.setBackgroundColor(Color.BLACK);
+            stats3.setBackgroundColor(Color.BLACK);
+            stats4.setBackgroundColor(Color.rgb(140,140,140));
+        }
+    }
 
 }
