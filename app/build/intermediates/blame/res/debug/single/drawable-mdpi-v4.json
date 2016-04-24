@@ -1,142 +1,282 @@
 [
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/dragonhoard.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/dragonhoard.jpg"
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\cardback.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\cardback.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/explodifying.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/explodifying.jpg"
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\dragonhoard.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\dragonhoard.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/pamandbecubas.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/pamandbecubas.jpg"
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\professorpresto.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\professorpresto.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/lightningbolt.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/lightningbolt.jpg"
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\thaifoon.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\thaifoon.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/cardback.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/cardback.jpg"
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\midnightmerlin.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\midnightmerlin.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/magmagog.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/magmagog.jpg"
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ballsy.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\ballsy.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/brainsuck.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/brainsuck.jpg"
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/impatient.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/impatient.jpg"
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_action_search.png",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\ic_action_search.png"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_launcher.png",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/ic_launcher.png"
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\boulderiffic.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\boulderiffic.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/catastrophic.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/catastrophic.jpg"
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\cardback.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\cardback.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/oldscratch.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/oldscratch.jpg"
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bedazzlement.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\bedazzlement.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/devilicious.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/devilicious.jpg"
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\boulderiffic.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\boulderiffic.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/scorchia.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/scorchia.jpg"
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\drrootybark.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\drrootybark.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/muzzlesnaps.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/muzzlesnaps.jpg"
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\fistonature.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\fistonature.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/chicken.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/chicken.jpg"
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bedazzlement.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\bedazzlement.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/professorpresto.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/professorpresto.jpg"
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\thaifoon.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\thaifoon.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/boulderiffic.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/boulderiffic.jpg"
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\meatierswarm.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\meatierswarm.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/ballsy.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/ballsy.jpg"
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ballsy.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\ballsy.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/mindaltering.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/mindaltering.jpg"
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\coneofacid.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\coneofacid.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/twofaced.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/twofaced.jpg"
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\fistonature.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\fistonature.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/mercykilling.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/mercykilling.jpg"
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\professorpresto.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\professorpresto.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/benvoodoo.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/benvoodoo.jpg"
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/mightygro.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/mightygro.jpg"
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\catastrophic.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\catastrophic.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/bedazzlement.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/bedazzlement.jpg"
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\oldscratch.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\oldscratch.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/deathwish.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/deathwish.jpg"
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\meatierswarm.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\meatierswarm.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/gorenado.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/gorenado.jpg"
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\lightningbolt.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\lightningbolt.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/thaifoon.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/thaifoon.jpg"
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\gorenado.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\gorenado.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/drrootybark.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/drrootybark.jpg"
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\mindaltering.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\mindaltering.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/midnightmerlin.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/midnightmerlin.jpg"
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\kingoberon.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\kingoberon.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_action_search.png",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/ic_action_search.png"
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\coneofacid.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\coneofacid.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/meatierswarm.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/meatierswarm.jpg"
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\benvoodoo.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\benvoodoo.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/thedeathfairy.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/thedeathfairy.jpg"
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\oldscratch.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\oldscratch.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/coneofacid.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/coneofacid.jpg"
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\muzzlesnaps.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\muzzlesnaps.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/kingoberon.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/kingoberon.jpg"
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\twofaced.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\twofaced.jpg"
     },
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/fistonature.jpg",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-mdpi/fistonature.jpg"
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\devilicious.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\devilicious.jpg"
+    },
+    {
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\scorchia.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\scorchia.jpg"
+    },
+    {
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\lightningbolt.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\lightningbolt.jpg"
+    },
+    {
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\impatient.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\impatient.jpg"
+    },
+    {
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\brainsuck.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\brainsuck.jpg"
+    },
+    {
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\magmagog.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\magmagog.jpg"
+    },
+    {
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\chicken.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\chicken.jpg"
+    },
+    {
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\mightygro.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\mightygro.jpg"
+    },
+    {
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\deathwish.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\deathwish.jpg"
+    },
+    {
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\chicken.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\chicken.jpg"
+    },
+    {
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\deathwish.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\deathwish.jpg"
+    },
+    {
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\explodifying.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\explodifying.jpg"
+    },
+    {
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\mercykilling.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\mercykilling.jpg"
+    },
+    {
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\mercykilling.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\mercykilling.jpg"
+    },
+    {
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\explodifying.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\explodifying.jpg"
+    },
+    {
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\dragonhoard.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\dragonhoard.jpg"
+    },
+    {
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\drrootybark.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\drrootybark.jpg"
+    },
+    {
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\benvoodoo.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\benvoodoo.jpg"
+    },
+    {
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\kingoberon.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\kingoberon.jpg"
+    },
+    {
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\magmagog.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\magmagog.jpg"
+    },
+    {
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\catastrophic.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\catastrophic.jpg"
+    },
+    {
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\gorenado.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\gorenado.jpg"
+    },
+    {
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\mindaltering.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\mindaltering.jpg"
+    },
+    {
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\impatient.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\impatient.jpg"
+    },
+    {
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\pamandbecubas.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\pamandbecubas.jpg"
+    },
+    {
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\brainsuck.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\brainsuck.jpg"
+    },
+    {
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\thedeathfairy.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\thedeathfairy.jpg"
+    },
+    {
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\mightygro.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\mightygro.jpg"
+    },
+    {
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\thedeathfairy.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\thedeathfairy.jpg"
+    },
+    {
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_action_search.png",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\ic_action_search.png"
+    },
+    {
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\twofaced.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\twofaced.jpg"
+    },
+    {
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\muzzlesnaps.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\muzzlesnaps.jpg"
+    },
+    {
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\scorchia.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\scorchia.jpg"
+    },
+    {
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\pamandbecubas.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\pamandbecubas.jpg"
+    },
+    {
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\devilicious.jpg",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-mdpi\\devilicious.jpg"
+    },
+    {
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\midnightmerlin.jpg",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-mdpi\\midnightmerlin.jpg"
     }
 ]

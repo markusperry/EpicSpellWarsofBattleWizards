@@ -1,6 +1,10 @@
 [
     {
-        "merged": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_launcher.png",
-        "source": "/Users/markusperry/AndroidStudioProjects/Epic Real Version/app/src/main/res/drawable-ldpi/ic_launcher.png"
+        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\drawable-ldpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\drawable-ldpi\\ic_launcher.png"
     }
 ]

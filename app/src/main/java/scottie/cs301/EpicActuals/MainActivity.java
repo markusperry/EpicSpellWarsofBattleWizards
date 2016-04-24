@@ -1,5 +1,7 @@
 package scottie.cs301.EpicActuals;
 
+import android.content.pm.ActivityInfo;
+
 import java.util.ArrayList;
 
 import scottie.cs301.EpicActuals.LocalProtect.LocalGameActual;
@@ -26,6 +28,16 @@ public class MainActivity extends GameMainActivity {
 
     @Override
     public GameConfig createDefaultConfig() {
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE); // locks screen orientation to landscape
+        /**
+         * External Citation:
+         *  Date: 4/24/16
+         *  Problem: didn't remember how to lock screen orientation
+         *  Resource: notes from CS 301-A
+         *  Solution: used code from notes
+         */
+
         ArrayList<GamePlayerType> playerTypes = new ArrayList<GamePlayerType>();
 
         playerTypes.add(new GamePlayerType("Local Human Player") {

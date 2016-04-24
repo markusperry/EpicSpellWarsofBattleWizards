@@ -36,7 +36,7 @@ public class GameStateActual extends GameState {
 
         for(int itter = 0; itter < 4; itter++)
         {
-            playerHealths[itter] = 25;
+            playerHealths[itter] = 5;
             playerHands.add(itter,deal());
         }
         whoseTurn=0;
@@ -62,14 +62,21 @@ public class GameStateActual extends GameState {
 
     public void damage(int damageVal, int playerToDamage)
     {
-       playerHealths[playerToDamage] -= damageVal;
+        if (playerHealths[playerToDamage] - damageVal >= 0) {
+            playerHealths[playerToDamage] -= damageVal;
+        }
+        else {
+            return;
+        }
     }
 
     public void damageMultiple(int damageVal, ArrayList<Integer>playersToDamage)
     {
         for (int a: playersToDamage)
         {
-            playerHealths[a] -= damageVal;
+            if (playerHealths[a] - damageVal >= 0) {
+                playerHealths[a] -= damageVal;
+            }
         }
     }
 
@@ -79,7 +86,9 @@ public class GameStateActual extends GameState {
         {
             if (i!=playerNoDamage)
             {
-                playerHealths[i] -= damageVal;
+                if (playerHealths[i] - damageVal >= 0) {
+                    playerHealths[i] -= damageVal;
+                }
             }
         }
     }

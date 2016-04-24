@@ -10,7 +10,7 @@ import scottie.cs301.Imports.GameFramework.R;
  * For use in Epic Spell Wars cs301 class project.
  * Team 5: Scott Zimmerman, Markus Perry, Liz Mukai, Teresa Condon
  * <p/>
- * This is an example class. There will be 52 subclasses of CardNode.
+ * This is an example class.
  * Each contains its initial values and its resolve method.
  */
 public

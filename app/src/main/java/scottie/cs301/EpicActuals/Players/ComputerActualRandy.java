@@ -26,40 +26,83 @@ import scottie.cs301.Imports.GameFramework.infoMsg.NotYourTurnInfo;
 public class ComputerActualRandy extends GameComputerPlayer {
 
     protected GameStateActual myRecentState;//full copy of most recently received Game State for easier access
+    protected boolean alive = true;
 
+    /**
+     * default constructor
+     *
+     * @param name  name of random computer player
+     */
     public ComputerActualRandy(String name) {
         super(name);
     } //default constructor
 
+
+    /**
+     * overrides the recieveInfo method from the super class
+     * assigns value to Recent State and dispatches helper methods
+     *
+     * @param info  GameInfo object passed in
+     */
     @Override
     protected void receiveInfo(GameInfo info) {
-        if (info instanceof IllegalMoveInfo || info instanceof NotYourTurnInfo)
+        if (info instanceof NotYourTurnInfo)
         {
             return;
         }
-
         else if (info instanceof GameStateActual) //only react if info is a full state
         {
             myRecentState = (GameStateActual) info;
-            this.sleep(2000);
-            game.sendAction(new SendSpell(this, selectNextSpell()));
-            Log.i("Computer Player: ", "" + this);//cast it and store
+            if (myRecentState.playerHealths[playerNum]<=0)
+            {
+                if (myRecentState.getWhoseTurn()+1==4)
+                {
+                    myRecentState.setWhoseTurn(0);
+                }
+                else
+                {
+                    myRecentState.setWhoseTurn(playerNum+1);
+                }
+                return;
+            }
+            else {
+                this.sleep(1000);
+                game.sendAction(new SendSpell(this, selectNextSpell()));
+                Log.i("Computer Player: ", "" + this);//cast it and store
+            }
+        }
+        else if (info instanceof IllegalMoveInfo) {
+                ArrayList<Card> newSpell = this.selectNextSpell();
+                game.sendAction(new SendSpell(this, newSpell));
         }
 
-    } //assign value to Recent State and dispatch helper methods
+    }
 
+    /**
+     * chooses the spell components
+     *
+     * @return int[] containing the ID numbers of the cards in the spell
+     */
     public ArrayList<Card> selectNextSpell() {
 
+        //select a random number of 1, 2, or 3 of cards to pick
         Random rand = new Random();
         int numCardsInSpell = 1 + rand.nextInt(3);
-        //select a random number of 1, 2, or 3 of cards to pick
-        //pulled from java doc for inclusive or exclusive question
 
+        /**
+         * External Citation:
+         *  Date: 4/10/16
+         *  Problem: didn't remember if nextInt(int n) in Random class was exclusive or inclusive
+         *  Resource: https://docs.oracle.com/javase/8/docs/api/java/util/Random.html
+         *  Solution: question was answered after reading the description of the above method
+         */
+
+        //selects random number of cards from hand and returns it
         ArrayList<Card> spellToSend = new ArrayList<Card>();
-        int cardSeletor = 0;
+        int cardSelector = 0;
         for (int i = 0; i < numCardsInSpell; i++) {
-            cardSeletor = rand.nextInt(8);
-            spellToSend.add(myRecentState.playerHands.get(playerNum).get(cardSeletor));
+            cardSelector = rand.nextInt(8);
+            spellToSend.add(myRecentState.playerHands.get(playerNum).get(cardSelector));
         }
         myRecentState.dealNewHandTo(playerNum);
         return spellToSend;

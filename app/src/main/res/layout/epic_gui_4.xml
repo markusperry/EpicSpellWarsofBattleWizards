@@ -40,7 +40,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Position: Left"
+                android:text="Me"
                 android:id="@+id/player1Pos"
                 android:textColor="#ffffff"
                 android:textSize="15sp"
@@ -52,7 +52,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Health: 100"
+                android:text="Health: "
                 android:id="@+id/player1Health"
                 android:textColor="#ffffff"
                 android:textSize="15sp"
@@ -82,7 +82,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Position: Left"
+                android:text="Position: Right"
                 android:id="@+id/player2Pos"
                 android:textColor="#ffffff"
                 android:textSize="15sp"
@@ -94,7 +94,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Health: 100"
+                android:text="Health: "
                 android:id="@+id/player2Health"
                 android:textColor="#ffffff"
                 android:textSize="15sp"
@@ -125,7 +125,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Position: Left"
+                android:text="Position: Across"
                 android:id="@+id/player3Pos"
                 android:textColor="#ffffff"
                 android:textSize="15sp"
@@ -137,7 +137,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Health: 100"
+                android:text="Health: "
                 android:id="@+id/player3Health"
                 android:textColor="#ffffff"
                 android:textSize="15sp"
@@ -180,7 +180,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Health: 100"
+                android:text="Health: "
                 android:id="@+id/player4Health"
                 android:textColor="#ffffff"
                 android:textSize="15sp"
@@ -235,7 +235,8 @@
                         android:id="@+id/diceRollImage"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp" />
+                        android:layout_marginLeft="5dp"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -246,7 +247,8 @@
                         android:typeface="serif"
                         android:textColor="#000000"
                         android:paddingLeft="10dp"
-                        android:textSize="15sp" />
+                        android:textSize="15sp"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -338,7 +340,8 @@
                     android:id="@+id/addCard1"
                     android:layout_marginLeft="20dp"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp" />
+                    android:layout_marginTop="5dp"
+                    android:visibility="invisible" />
 
                 <ImageButton
                     android:layout_width="100dp"
@@ -346,7 +349,8 @@
                     android:id="@+id/addCard2"
                     android:layout_marginLeft="20dp"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp" />
+                    android:layout_marginTop="5dp"
+                    android:visibility="invisible" />
             </LinearLayout>
 
             <LinearLayout
@@ -363,7 +367,8 @@
                     android:id="@+id/addCard3"
                     android:layout_marginLeft="20dp"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp" />
+                    android:layout_marginTop="5dp"
+                    android:visibility="invisible" />
 
                 <ImageButton
                     android:layout_width="100dp"
@@ -371,7 +376,8 @@
                     android:id="@+id/addCard4"
                     android:layout_marginLeft="20dp"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp" />
+                    android:layout_marginTop="5dp"
+                    android:visibility="invisible" />
 
             </LinearLayout>
 
@@ -389,7 +395,8 @@
                     android:id="@+id/addCard5"
                     android:layout_marginLeft="20dp"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp" />
+                    android:layout_marginTop="5dp"
+                    android:visibility="invisible" />
 
                 <ImageButton
                     android:layout_width="100dp"
@@ -397,7 +404,8 @@
                     android:id="@+id/addCard6"
                     android:layout_marginLeft="20dp"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp" />
+                    android:layout_marginTop="5dp"
+                    android:visibility="invisible" />
 
             </LinearLayout>
         </LinearLayout>
