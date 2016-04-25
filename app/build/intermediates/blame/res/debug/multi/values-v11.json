@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\values-v11\\values-v11.xml",
+        "outputFile": "/Users/markusperry/Desktop/EpicSpellWarsofBattleWizards/app/build/intermediates/res/merged/debug/values-v11/values-v11.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 113
                 },
                 "from": {
-                    "file": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "file": "/Users/markusperry/Desktop/EpicSpellWarsofBattleWizards/app/src/main/res/values-v11/styles.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -24,7 +24,7 @@
         ]
     },
     {
-        "outputFile": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\values-v11\\values-v11.xml",
+        "outputFile": "/Users/markusperry/Desktop/EpicSpellWarsofBattleWizards/C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\values-v11\\values-v11.xml",
         "map": [
             {
                 "to": {
@@ -35,7 +35,31 @@
                     "endOffset": 113
                 },
                 "from": {
-                    "file": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "file": "/Users/markusperry/Desktop/EpicSpellWarsofBattleWizards/C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 19,
+                        "endColumn": 63,
+                        "endOffset": 78
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/markusperry/Desktop/EpicSpellWarsofBattleWizards/C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\values-v11\\values-v11.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 62,
+                    "endOffset": 113
+                },
+                "from": {
+                    "file": "/Users/markusperry/Desktop/EpicSpellWarsofBattleWizards/C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\values-v11\\styles.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

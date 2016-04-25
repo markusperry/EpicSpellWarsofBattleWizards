@@ -58,6 +58,12 @@ public class HumanActual extends HumanAbstract implements View.OnClickListener {
     protected TextView healthFour;
     protected TextView[] healths;
 
+    TextView player1Name;
+    TextView player2Name;
+    TextView player3Name;
+    TextView player4Name;
+    TextView[] playerNames;
+
 
 
     public HumanActual(String name) {
@@ -82,6 +88,7 @@ public class HumanActual extends HumanAbstract implements View.OnClickListener {
             int playerTurn = myRecentState.getWhoseTurn();
             setTurnSign(playerTurn);
             populateHand();
+            setName();
             Log.i("Player Turn",""+myRecentState.getWhoseTurn());
         }
 
@@ -138,6 +145,13 @@ public class HumanActual extends HumanAbstract implements View.OnClickListener {
         Button killButton = (Button)activity.findViewById(R.id.killButton);
         killButton.setOnClickListener(this);
 
+        player1Name = (TextView)activity.findViewById(R.id.player1Callout);
+        player2Name = (TextView)activity.findViewById(R.id.player2Callout);
+        player3Name = (TextView)activity.findViewById(R.id.player3Callout);
+        player4Name = (TextView)activity.findViewById(R.id.player4Callout);
+
+        playerNames = new TextView[]{player1Name,player2Name,player3Name,player4Name};
+
         if (myRecentState != null) {
             receiveInfo(myRecentState);
             populateHand();
@@ -178,6 +192,7 @@ public class HumanActual extends HumanAbstract implements View.OnClickListener {
                     }
                 }
             }
+        displaySpell(mySpell);
         game.sendAction(new SendSpell(this, mySpell));
         Log.i("Human Player Spell",""+this);
 
@@ -186,66 +201,108 @@ public class HumanActual extends HumanAbstract implements View.OnClickListener {
 
     } //visual feedback for card selection
 
-
     public void populateHand() {
-        playerCard1.setImageResource(myHand.get(0).imageRef);
-        playerCard2.setImageResource(myHand.get(1).imageRef);
-        playerCard3.setImageResource(myHand.get(2).imageRef);
-        playerCard4.setImageResource(myHand.get(3).imageRef);
-        playerCard5.setImageResource(myHand.get(4).imageRef);
-        playerCard6.setImageResource(myHand.get(5).imageRef);
-        playerCard7.setImageResource(myHand.get(6).imageRef);
-        playerCard8.setImageResource(myHand.get(7).imageRef);
+        Thread newThread = new Thread(new Runnable() {
+            public void run() {
+                playerCard1.setImageResource(myHand.get(0).imageRef);
+                playerCard2.setImageResource(myHand.get(1).imageRef);
+                playerCard3.setImageResource(myHand.get(2).imageRef);
+                playerCard4.setImageResource(myHand.get(3).imageRef);
+                playerCard5.setImageResource(myHand.get(4).imageRef);
+                playerCard6.setImageResource(myHand.get(5).imageRef);
+                playerCard7.setImageResource(myHand.get(6).imageRef);
+                playerCard8.setImageResource(myHand.get(7).imageRef);
 
-        for (int i = 0; i < myHandImages.length; i++)
-        {
-            myHandImages[i].setImageAlpha(255);
-        }
+                for (int i = 0; i < myHandImages.length; i++) {
+                    myHandImages[i].setImageAlpha(255);
+                }
 
-        for (int itter = 0; itter < 4; itter++) {
-            healths[itter].setText("" + myRecentState.playerHealths[itter]);
-        }
+                for (int itter = 0; itter < 4; itter++) {
+                    healths[itter].setText("" + myRecentState.playerHealths[itter]);
+                }
 
+            }
+
+
+        });
+        newThread.run();
     }
-
-    public void setTurnSign(int playerTurn)
-    {
+    public void setTurnSign(int playerTurn) {
         View stats1 = myActivity.findViewById(R.id.player1stats);
         View stats2 = myActivity.findViewById(R.id.player2stats);
         View stats3 = myActivity.findViewById(R.id.player3stats);
         View stats4 = myActivity.findViewById(R.id.player4stats);
 
 
-        if (playerTurn==0)
-        {
-            stats1.setBackgroundColor(Color.rgb(140,140,140));
+        if (playerTurn == 0) {
+            stats1.setBackgroundColor(Color.rgb(140, 140, 140));
             stats2.setBackgroundColor(Color.BLACK);
             stats3.setBackgroundColor(Color.BLACK);
             stats4.setBackgroundColor(Color.BLACK);
-        }
-
-        else if (playerTurn==1)
-        {
+        } else if (playerTurn == 1) {
             stats1.setBackgroundColor(Color.BLACK);
             stats2.setBackgroundColor(Color.rgb(140, 140, 140));
             stats3.setBackgroundColor(Color.BLACK);
             stats4.setBackgroundColor(Color.BLACK);
-        }
-
-        else if (playerTurn==2)
-        {
+        } else if (playerTurn == 2) {
             stats1.setBackgroundColor(Color.BLACK);
             stats2.setBackgroundColor(Color.BLACK);
-            stats3.setBackgroundColor(Color.rgb(140,140,140));
+            stats3.setBackgroundColor(Color.rgb(140, 140, 140));
             stats4.setBackgroundColor(Color.BLACK);
-        }
-
-        else if (playerTurn==3)
-        {
+        } else if (playerTurn == 3) {
             stats1.setBackgroundColor(Color.BLACK);
             stats2.setBackgroundColor(Color.BLACK);
             stats3.setBackgroundColor(Color.BLACK);
-            stats4.setBackgroundColor(Color.rgb(140,140,140));
+            stats4.setBackgroundColor(Color.rgb(140, 140, 140));
+        }
+    }
+
+    public void setName()
+    {
+        for (int i = 0; i < allPlayerNames.length; i++)
+        {
+            playerNames[i].setText(allPlayerNames[i]);
+        }
+    }
+
+    public void displaySpell(ArrayList<Card> theSpell)
+    {
+        int counter = 0;
+        Card firstCard = null;
+        Card secondCard = null;
+        Card thirdCard = null;
+        for (Card a :theSpell)
+        {
+            switch (a.placement)
+            {
+                case 1: firstCard=a;break;
+                case 2: secondCard=a;break;
+                case 3: thirdCard=a;break;
+            }
+        }
+        if (firstCard == null)
+        {
+            myFocus[0].setImageResource(R.drawable.cardback);
+        }
+        else
+        {
+            myFocus[0].setImageResource(firstCard.imageRef);
+        }
+        if (secondCard == null)
+        {
+            myFocus[1].setImageResource(R.drawable.cardback);
+        }
+        else
+        {
+            myFocus[1].setImageResource(secondCard.imageRef);
+        }
+        if (thirdCard == null)
+        {
+            myFocus[2].setImageResource(R.drawable.cardback);
+        }
+        else
+        {
+            myFocus[2].setImageResource(thirdCard.imageRef);
         }
     }
 

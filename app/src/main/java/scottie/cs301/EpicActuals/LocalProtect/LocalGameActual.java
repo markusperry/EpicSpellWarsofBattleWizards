@@ -1,5 +1,6 @@
 package scottie.cs301.EpicActuals.LocalProtect;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import scottie.cs301.EpicActuals.Resources.Actions.SendSpell;
@@ -18,10 +19,11 @@ import scottie.cs301.Imports.GameFramework.actionMsg.GameAction;
  * Local Game subclass that will be the main driver for gameplay.
  * Contains static Deck reference.
  * Receives actions and dispatches changes to Game State.
+ * Later rewritten and improved by Markus Perry
  */
-public class LocalGameActual
-        extends LocalGame {
+public class LocalGameActual extends LocalGame implements Serializable{
 
+    private static final long serialVersionUID = -6396033535328393791L;
     protected GameStateActual masterState = null; // gamestate object
 
     /**
@@ -61,7 +63,6 @@ public class LocalGameActual
         }
     }
 
-
     /**
      * method called when new action arrives from player
      *
@@ -92,6 +93,8 @@ public class LocalGameActual
                 boolean secondCard = false;
                 boolean thirdCard = false;
 
+                boolean validHand = true;
+
                 for (Card a :castedSpell)
                 {
                     // enforces legal move- order of the cards
@@ -101,9 +104,9 @@ public class LocalGameActual
                     }
                     else if (a.placement==1 && firstCard)
                     {
-                        return false;
+                        validHand = false;
+                        break;
                     }
-
 
                     if (a.placement==2 &&!secondCard)
                     {
@@ -112,7 +115,8 @@ public class LocalGameActual
 
                     else if (a.placement==2 && secondCard)
                     {
-                        return false;
+                        validHand = false;
+                        break;
                     }
 
                     if (a.placement==3 && !thirdCard)
@@ -121,25 +125,33 @@ public class LocalGameActual
                     }
                     else if (a.placement==3 && thirdCard)
                     {
-                        return false;
+                        validHand = false;
+                        break;
                     }
-
-                    a.resolve(masterState,playerTurn);
-
+                }
+                if (validHand)
+                {
+                    for (Card a :castedSpell)
+                    {
+                        a.resolve(masterState, playerTurn);
+                    }
+                }
+                else
+                {
+                    return false;
                 }
 
                 // deals new hand
-                masterState.dealNewHandTo(playerTurn);
-                playerTurn++;
+                masterState.dealNewHandTo(playerTurn, castedSpell);
 
                 //sets whose turn it is
-                if (playerTurn>=masterState.playerHealths.length)
+                if (playerTurn+1==4)
                 {
                     masterState.setWhoseTurn(0);
                 }
                 else
                 {
-                    masterState.setWhoseTurn(playerTurn);
+                    masterState.setWhoseTurn(playerTurn+1);
                 }
 
                 return true;
@@ -160,6 +172,7 @@ public class LocalGameActual
     protected String checkIfGameOver() {
         int numAlive = 0; // ID number of last wizards alive
         int numOfLastPlayer = 0; // number of players left alive
+        int numDead=0;
 
         //finds number of players still alive
         for (int itter = 0; itter < masterState.playerHealths.length; itter++)
@@ -169,6 +182,10 @@ public class LocalGameActual
                 numAlive++;
                 numOfLastPlayer = itter;
             }
+            else
+            {
+                numDead++;
+            }
         }
 
         // proclaims winner when only 1 is left alive
@@ -177,9 +194,14 @@ public class LocalGameActual
             numOfLastPlayer++;
             return "Player "+numOfLastPlayer+" has won!";
         }
+        if (numDead==4)
+        {
+            return "IT'S A TIE!!";
+        }
         else
         {
             return null;
         }
     } //end game string
+
 }

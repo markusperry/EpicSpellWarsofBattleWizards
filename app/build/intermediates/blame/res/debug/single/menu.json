@@ -1,10 +1,14 @@
 [
     {
-        "merged": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\menu\\game_main.xml",
-        "source": "C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\menu\\game_main.xml"
+        "merged": "/Users/markusperry/Desktop/EpicSpellWarsofBattleWizards/C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\build\\intermediates\\res\\merged\\debug\\menu\\game_main.xml",
+        "source": "/Users/markusperry/Desktop/EpicSpellWarsofBattleWizards/C:\\Users\\markusperry\\AndroidStudioProjects\\Epic Real Version\\app\\src\\main\\res\\menu\\game_main.xml"
     },
     {
-        "merged": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\menu\\game_main.xml",
-        "source": "C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\menu\\game_main.xml"
+        "merged": "/Users/markusperry/Desktop/EpicSpellWarsofBattleWizards/C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\build\\intermediates\\res\\merged\\debug\\menu\\game_main.xml",
+        "source": "/Users/markusperry/Desktop/EpicSpellWarsofBattleWizards/C:\\Users\\mukai18\\Downloads\\EpicSpellWarsofBattleWizards\\app\\src\\main\\res\\menu\\game_main.xml"
+    },
+    {
+        "merged": "/Users/markusperry/Desktop/EpicSpellWarsofBattleWizards/app/build/intermediates/res/merged/debug/menu/game_main.xml",
+        "source": "/Users/markusperry/Desktop/EpicSpellWarsofBattleWizards/app/src/main/res/menu/game_main.xml"
     }
 ]

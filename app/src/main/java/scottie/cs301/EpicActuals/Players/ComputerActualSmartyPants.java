@@ -3,14 +3,12 @@ package scottie.cs301.EpicActuals.Players;
 import android.util.Log;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 import scottie.cs301.EpicActuals.Resources.Actions.SendSpell;
 import scottie.cs301.EpicActuals.Resources.Cards.Card;
 import scottie.cs301.EpicActuals.Resources.Info.GameStateActual;
 import scottie.cs301.Imports.GameFramework.GameComputerPlayer;
 import scottie.cs301.Imports.GameFramework.infoMsg.GameInfo;
-import scottie.cs301.Imports.GameFramework.infoMsg.GameState;
 import scottie.cs301.Imports.GameFramework.infoMsg.IllegalMoveInfo;
 import scottie.cs301.Imports.GameFramework.infoMsg.NotYourTurnInfo;
 
@@ -43,17 +41,28 @@ public class ComputerActualSmartyPants extends GameComputerPlayer {
      * @param info  GameInfo object passed in
      */
     protected void receiveInfo(GameInfo info) {
-        if (info instanceof IllegalMoveInfo || info instanceof NotYourTurnInfo)
+        if (info instanceof NotYourTurnInfo)
         {
             return;
         }
 
-        else if (info instanceof GameStateActual) //only react if info is a full state
+        if (info instanceof GameStateActual) //only react if info is a full state
         {
             myRecentState = (GameStateActual) info;
-            this.sleep(2000);
+            if (myRecentState.playerHealths[playerNum]==0)
+            {
+                myRecentState.incrementTurn(playerNum);
+                return;
+            }
+            this.sleep(1000);
             game.sendAction(new SendSpell(this, selectNextSpell()));
             Log.i("Computer Player: ", "" + this);//cast it and store
+        }
+
+        if (info instanceof IllegalMoveInfo)
+        {
+            ArrayList<Card> newSpell = this.selectNextSpell();
+            game.sendAction(new SendSpell(this, newSpell));
         }
     }
 
@@ -65,28 +74,30 @@ public class ComputerActualSmartyPants extends GameComputerPlayer {
      */
     public ArrayList<Card> selectNextSpell() {
         ArrayList<Card> spellToSend = new ArrayList<Card>(); // arraylists of cards in spell
-        int cardSelector = 0; //
-        int strongestInit=0;
+        Card firstCard = null;
+        Card secondCard = null;
         Card thirdCard = null;
         for (Card a :myRecentState.playerHands.get(playerNum))
         {
-            if (a.placement==3)
+            switch (a.placement)
             {
-                if (a.initiative>=strongestInit)
-                {
-                    strongestInit = a.initiative;
-                    thirdCard = a;
-                }
+                case 1: firstCard=a;break;
+                case 2: secondCard=a;break;
+                case 3: thirdCard=a;break;
             }
         }
-
-        Random gen = new Random();
-        int firstCard = gen.nextInt(myRecentState.playerHands.get(playerNum).size());
-        int secondCard = gen.nextInt(myRecentState.playerHands.get(playerNum).size());
-
-        spellToSend.add(0,myRecentState.playerHands.get(playerNum).get(firstCard));
-        spellToSend.add(1,myRecentState.playerHands.get(playerNum).get(secondCard));
-        spellToSend.add(2,thirdCard);
+        if (firstCard != null)
+        {
+            spellToSend.add(firstCard);
+        }
+        if (secondCard != null)
+        {
+            spellToSend.add(secondCard);
+        }
+        if (thirdCard != null)
+        {
+            spellToSend.add(thirdCard);
+        }
 
         return spellToSend;
     }

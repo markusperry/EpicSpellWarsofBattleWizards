@@ -21,7 +21,6 @@ public class GameStateActual extends GameState {
     private int whoseTurn;
     public ArrayList<ArrayList<Card>> playerHands;
 
-
     public int getWhoseTurn() {
         return whoseTurn;
     }
@@ -36,8 +35,8 @@ public class GameStateActual extends GameState {
 
         for(int itter = 0; itter < 4; itter++)
         {
-            playerHealths[itter] = 5;
-            playerHands.add(itter,deal());
+            playerHealths[itter] = 15;
+            playerHands.add(itter,deal(8));
         }
         whoseTurn=0;
 
@@ -93,7 +92,7 @@ public class GameStateActual extends GameState {
         }
     }
 
-    public ArrayList<Card> deal()
+    public ArrayList<Card> deal(int numCards)
     {
         Deck myDeck = new Deck();
         ArrayList<Card> toDeal = new ArrayList<Card>();
@@ -103,11 +102,28 @@ public class GameStateActual extends GameState {
         return toDeal;
     }
 
-    public void dealNewHandTo(int playerNum)
+    public void dealNewHandTo(int playerNum, ArrayList<Card> theCastedSpell)
     {
         ArrayList<Card> newHand;
-        newHand = this.deal();
-        playerHands.set(playerNum,newHand);
+        for (Card a :theCastedSpell)
+        {
+            playerHands.get(playerNum).remove(a);
+        }
 
+        newHand = this.deal(theCastedSpell.size());
+        playerHands.get(playerNum).addAll(newHand);
+
+    }
+
+    public void incrementTurn(int playerNum)
+    {
+        if (playerNum+1==4)
+        {
+            setWhoseTurn(0);
+        }
+        else
+        {
+            setWhoseTurn(playerNum+1);
+        }
     }
 }
